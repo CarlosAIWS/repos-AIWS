@@ -1,5 +1,95 @@
 [
   {
+    "fecha": "2026-07-06",
+    "repo": "langchain-ai/openwiki",
+    "url_repo": "https://github.com/langchain-ai/openwiki",
+    "titulo": "Agent Documentation CLI",
+    "resumen": "CLI que escribe y mantiene documentación de tu codebase pensada para que la lean los agentes IA.",
+    "tags": [
+      "agentes",
+      "documentos",
+      "coding",
+      "automatización"
+    ],
+    "html": "semanas/analisis_repos_AIWS-06-07-2026.html#repo-openwiki",
+    "tema": "Open source self-hosted y agentes",
+    "lenguaje": "TypeScript",
+    "licencia": "MIT",
+    "estrellas": 2900
+  },
+  {
+    "fecha": "2026-07-06",
+    "repo": "dograh-hq/dograh",
+    "url_repo": "https://github.com/dograh-hq/dograh",
+    "titulo": "Voice AI Platform · Self-Hosted",
+    "resumen": "Plataforma open source de agentes de voz, alternativa self-hosted a Vapi y Retell con constructor visual de workflows.",
+    "tags": [
+      "agentes",
+      "mcp",
+      "self-hosted",
+      "workflow"
+    ],
+    "html": "semanas/analisis_repos_AIWS-06-07-2026.html#repo-dograh",
+    "tema": "Open source self-hosted y agentes",
+    "lenguaje": "Python",
+    "licencia": "BSD",
+    "estrellas": 4200
+  },
+  {
+    "fecha": "2026-07-06",
+    "repo": "linkwarden/linkwarden",
+    "url_repo": "https://github.com/linkwarden/linkwarden",
+    "titulo": "Bookmark Manager · Self-Hosted",
+    "resumen": "Gestor de bookmarks colaborativo self-hosted que preserva las páginas guardadas por si desaparecen de la red.",
+    "tags": [
+      "navegador",
+      "documentos",
+      "self-hosted",
+      "datos"
+    ],
+    "html": "semanas/analisis_repos_AIWS-06-07-2026.html#repo-linkwarden",
+    "tema": "Open source self-hosted y agentes",
+    "lenguaje": "TypeScript",
+    "licencia": "AGPL-3.0",
+    "estrellas": 18300
+  },
+  {
+    "fecha": "2026-07-06",
+    "repo": "mauriceboe/TREK",
+    "url_repo": "https://github.com/mauriceboe/TREK",
+    "titulo": "Travel Planner · Self-Hosted",
+    "resumen": "Planificador de viajes self-hosted colaborativo en tiempo real con mapas, presupuestos, diario y servidor MCP integrado.",
+    "tags": [
+      "mcp",
+      "self-hosted",
+      "workflow",
+      "integraciones"
+    ],
+    "html": "semanas/analisis_repos_AIWS-06-07-2026.html#repo-trek",
+    "tema": "Open source self-hosted y agentes",
+    "lenguaje": "TypeScript",
+    "licencia": "AGPL-3.0",
+    "estrellas": 8800
+  },
+  {
+    "fecha": "2026-07-06",
+    "repo": "DeusData/codebase-memory-mcp",
+    "url_repo": "https://github.com/DeusData/codebase-memory-mcp",
+    "titulo": "Code Intelligence MCP",
+    "resumen": "Servidor MCP que indexa tu codebase en un grafo de conocimiento persistente para que los agentes IA lo consulten sin gastar tokens.",
+    "tags": [
+      "mcp",
+      "memoria",
+      "coding",
+      "datos"
+    ],
+    "html": "semanas/analisis_repos_AIWS-06-07-2026.html#repo-codebase-memory-mcp",
+    "tema": "Open source self-hosted y agentes",
+    "lenguaje": "C",
+    "licencia": "MIT",
+    "estrellas": 25600
+  },
+  {
     "fecha": "2026-06-29",
     "repo": "latent-spaces/brag",
     "url_repo": "https://github.com/latent-spaces/brag",
