@@ -646,10 +646,29 @@
     .footer-bottom-line { flex-direction: column; align-items: flex-start; }
   }
 
+  /* --- Salto directo: resaltar el repo de destino --- */
   .repo-card{scroll-margin-top:32px}
   .repo-card:target{border-color:var(--red-primary)!important;
     box-shadow:0 0 0 2px rgba(211,31,27,.45),0 0 60px rgba(211,31,27,.18)!important}
   .repo-card:target::before{opacity:1!important}
+  /* --- Modo "un solo repo" (al llegar por enlace directo) --- */
+  #solo-banner{display:none}
+  body.solo-repo #solo-banner{display:flex}
+  body.solo-repo .repo-card:not(:target){display:none}
+  body.solo-repo .hero,body.solo-repo .summary{display:none}
+  #solo-banner{align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+    background:linear-gradient(135deg,rgba(211,31,27,0.08) 0%,rgba(0,0,0,0) 100%);
+    border:1px solid var(--gray-border);border-left:3px solid var(--red-primary);
+    border-radius:4px;padding:16px 22px;margin-bottom:36px}
+  #solo-banner .sb-left{display:flex;align-items:center;gap:20px;flex-wrap:wrap;
+    font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--gray-mid);letter-spacing:0.06em}
+  #solo-banner a.sb-back{color:var(--silver-bright);text-decoration:none;font-weight:600;
+    font-family:'JetBrains Mono',monospace;letter-spacing:0.04em;transition:color .2s ease;white-space:nowrap}
+  #solo-banner a.sb-back:hover{color:var(--red-primary)}
+  #solo-banner .sb-btn{font-family:'Sora',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.06em;
+    text-transform:uppercase;color:var(--silver-bright);background:transparent;border:1px solid var(--gray-border);
+    padding:11px 20px;border-radius:3px;cursor:pointer;transition:all .2s ease;white-space:nowrap}
+  #solo-banner .sb-btn:hover{border-color:var(--red-primary);color:var(--red-primary)}
 </style>
 </head>
 <body>
@@ -691,6 +710,13 @@
 </div>
 
 <!-- REPO GRID -->
+<div id="solo-banner">
+  <div class="sb-left">
+    <a class="sb-back" href="../index.html">&larr; Volver al directorio</a>
+    <span id="sb-info"></span>
+  </div>
+  <button class="sb-btn" id="sb-showall">Ver todos los de esta sesi&oacute;n</button>
+</div>
 <div class="repo-grid">
 
   <!-- 01 · AGENTIC INBOX -->
@@ -915,5 +941,31 @@
 </footer>
 
 </div>
+<script>
+(function(){
+  var body=document.body,
+      info=document.getElementById('sb-info'),
+      btn=document.getElementById('sb-showall'),
+      total=document.querySelectorAll('.repo-card').length;
+  function apply(){
+    var id=decodeURIComponent((location.hash||'').slice(1));
+    var el=id?document.getElementById(id):null;
+    if(el && el.classList.contains('repo-card')){
+      body.classList.add('solo-repo');
+      if(info) info.textContent='Mostrando 1 repo de '+total+' de esta sesi\u00f3n';
+      window.scrollTo(0,0);
+    } else {
+      body.classList.remove('solo-repo');
+    }
+  }
+  if(btn) btn.addEventListener('click', function(){
+    body.classList.remove('solo-repo');
+    var t=document.querySelector('.repo-card:target');
+    if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+  window.addEventListener('hashchange', apply);
+  apply();
+})();
+</script>
 </body>
 </html>
