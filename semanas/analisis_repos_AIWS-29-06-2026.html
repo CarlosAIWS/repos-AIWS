@@ -198,6 +198,11 @@
     .footer-contact { justify-content: flex-start; }
     .footer-bottom-line { flex-direction: column; align-items: flex-start; }
   }
+
+  .repo-card{scroll-margin-top:32px}
+  .repo-card:target{border-color:var(--red-primary)!important;
+    box-shadow:0 0 0 2px rgba(211,31,27,.45),0 0 60px rgba(211,31,27,.18)!important}
+  .repo-card:target::before{opacity:1!important}
 </style>
 </head>
 <body>
@@ -236,7 +241,7 @@
 </div>
 
 <div class="repo-grid">
-  <article class="repo-card">
+  <article class="repo-card" id="repo-brag">
     <div class="card-head">
       <div class="card-title-wrap">
         <div class="card-number">
@@ -297,7 +302,7 @@
     </div>
   </article>
 
-  <article class="repo-card">
+  <article class="repo-card" id="repo-recall">
     <div class="card-head">
       <div class="card-title-wrap">
         <div class="card-number">
@@ -358,7 +363,7 @@
     </div>
   </article>
 
-  <article class="repo-card">
+  <article class="repo-card" id="repo-humanizer">
     <div class="card-head">
       <div class="card-title-wrap">
         <div class="card-number">
@@ -419,7 +424,7 @@
     </div>
   </article>
 
-  <article class="repo-card">
+  <article class="repo-card" id="repo-hermes-browser-extension">
     <div class="card-head">
       <div class="card-title-wrap">
         <div class="card-number">
@@ -480,7 +485,7 @@
     </div>
   </article>
 
-  <article class="repo-card">
+  <article class="repo-card" id="repo-vigils">
     <div class="card-head">
       <div class="card-title-wrap">
         <div class="card-number">

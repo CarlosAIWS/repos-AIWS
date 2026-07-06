@@ -645,6 +645,11 @@
     .footer-contact { justify-content: flex-start; }
     .footer-bottom-line { flex-direction: column; align-items: flex-start; }
   }
+
+  .repo-card{scroll-margin-top:32px}
+  .repo-card:target{border-color:var(--red-primary)!important;
+    box-shadow:0 0 0 2px rgba(211,31,27,.45),0 0 60px rgba(211,31,27,.18)!important}
+  .repo-card:target::before{opacity:1!important}
 </style>
 </head>
 <body>
@@ -689,7 +694,7 @@
 <div class="repo-grid">
 
   <!-- 01 · AGENTIC INBOX -->
-  <article class="repo-card">
+  <article class="repo-card" id="repo-agentic-inbox">
     <div class="card-head">
       <div class="card-title-wrap">
         <div class="card-number">
@@ -754,7 +759,7 @@
   </article>
 
   <!-- 02 · NANGO -->
-  <article class="repo-card">
+  <article class="repo-card" id="repo-nango">
     <div class="card-head">
       <div class="card-title-wrap">
         <div class="card-number">
@@ -818,7 +823,7 @@
   </article>
 
   <!-- 03 · BRIGHTBEAN STUDIO -->
-  <article class="repo-card">
+  <article class="repo-card" id="repo-brightbean-studio">
     <div class="card-head">
       <div class="card-title-wrap">
         <div class="card-number">
