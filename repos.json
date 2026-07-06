@@ -1,0 +1,221 @@
+[
+  {
+    "fecha": "2026-06-29",
+    "repo": "latent-spaces/brag",
+    "url_repo": "https://github.com/latent-spaces/brag",
+    "titulo": "Launch Video Skill",
+    "resumen": "Una skill de Claude Code que convierte el proyecto que acabas de crear en un vídeo de lanzamiento corto y compartible.",
+    "tags": [
+      "video",
+      "skills",
+      "claude code"
+    ],
+    "html": "semanas/analisis_repos_AIWS-29-06-2026.html",
+    "lenguaje": "Node.js"
+  },
+  {
+    "fecha": "2026-06-29",
+    "repo": "raiyanyahya/recall",
+    "url_repo": "https://github.com/raiyanyahya/recall",
+    "titulo": "Local Project Memory",
+    "resumen": "Plugin de Claude Code que mantiene memoria persistente del proyecto entre sesiones, totalmente en local y sin llamadas a APIs.",
+    "tags": [
+      "memoria",
+      "local-first",
+      "claude code"
+    ],
+    "html": "semanas/analisis_repos_AIWS-29-06-2026.html",
+    "lenguaje": "Python"
+  },
+  {
+    "fecha": "2026-06-29",
+    "repo": "blader/humanizer",
+    "url_repo": "https://github.com/blader/humanizer",
+    "titulo": "AI Writing Cleanup",
+    "resumen": "Skill que elimina las huellas típicas del texto generado por IA y lo deja sonar a una persona real.",
+    "tags": [
+      "escritura",
+      "skills",
+      "claude code"
+    ],
+    "html": "semanas/analisis_repos_AIWS-29-06-2026.html",
+    "estrellas": 25200
+  },
+  {
+    "fecha": "2026-06-29",
+    "repo": "abundantbeing/hermes-browser-extension",
+    "url_repo": "https://github.com/abundantbeing/hermes-browser-extension",
+    "titulo": "Browser Side Panel",
+    "resumen": "Extensión de Chrome/Edge que abre un side panel conectado a un runtime local de Hermes Agent (Nous Research).",
+    "tags": [
+      "navegador",
+      "agentes",
+      "extensión"
+    ],
+    "html": "semanas/analisis_repos_AIWS-29-06-2026.html",
+    "lenguaje": "JavaScript",
+    "estrellas": 12
+  },
+  {
+    "fecha": "2026-06-29",
+    "repo": "duncatzat/vigils",
+    "url_repo": "https://github.com/duncatzat/vigils",
+    "titulo": "Agent Control Plane",
+    "resumen": "Capa local de control entre tus agentes IA y las herramientas que tocan: ver, aprobar y proteger.",
+    "tags": [
+      "seguridad",
+      "agentes",
+      "control"
+    ],
+    "html": "semanas/analisis_repos_AIWS-29-06-2026.html",
+    "lenguaje": "Rust",
+    "estrellas": 129
+  },
+  {
+    "fecha": "2026-06-22",
+    "repo": "Zackriya-Solutions/meetily",
+    "url_repo": "https://github.com/Zackriya-Solutions/meetily",
+    "titulo": "Meeting Assistant · Local-First",
+    "resumen": "Asistente de reuniones IA que transcribe y resume todo en local, sin enviar nada a la nube.",
+    "tags": [
+      "reuniones",
+      "transcripción",
+      "local-first"
+    ],
+    "html": "semanas/analisis_repos_AIWS-22-06-2026.html",
+    "lenguaje": "Rust",
+    "estrellas": 12800
+  },
+  {
+    "fecha": "2026-06-22",
+    "repo": "getagentseal/codeburn",
+    "url_repo": "https://github.com/getagentseal/codeburn",
+    "titulo": "AI Coding Observability",
+    "resumen": "Un panel TUI que te dice dónde se gastan los tokens en tus agentes de coding.",
+    "tags": [
+      "observabilidad",
+      "coding",
+      "costes"
+    ],
+    "html": "semanas/analisis_repos_AIWS-22-06-2026.html",
+    "lenguaje": "TypeScript",
+    "estrellas": 2700
+  },
+  {
+    "fecha": "2026-06-22",
+    "repo": "OpenCut-app/OpenCut",
+    "url_repo": "https://github.com/OpenCut-app/OpenCut",
+    "titulo": "Video Editor · Open Source",
+    "resumen": "Editor de video libre y open source, alternativa directa a CapCut. Funciona en web, escritorio y móvil.",
+    "tags": [
+      "video",
+      "editor",
+      "self-hosted"
+    ],
+    "html": "semanas/analisis_repos_AIWS-22-06-2026.html",
+    "lenguaje": "TypeScript",
+    "estrellas": 50200
+  },
+  {
+    "fecha": "2026-06-22",
+    "repo": "NVIDIA/SkillSpector",
+    "url_repo": "https://github.com/NVIDIA/SkillSpector",
+    "titulo": "AI Skills Security Scanner",
+    "resumen": "Escáner de seguridad para skills de agentes IA. Detecta vulnerabilidades antes de instalarlas.",
+    "tags": [
+      "seguridad",
+      "skills",
+      "agentes"
+    ],
+    "html": "semanas/analisis_repos_AIWS-22-06-2026.html",
+    "lenguaje": "Python"
+  },
+  {
+    "fecha": "2026-06-22",
+    "repo": "Panniantong/Agent-Reach",
+    "url_repo": "https://github.com/Panniantong/Agent-Reach",
+    "titulo": "Agent Internet Toolkit",
+    "resumen": "Le da a tu agente IA \"ojos\" para leer todo internet sin pasar por APIs de pago.",
+    "tags": [
+      "agentes",
+      "scraping",
+      "mcp"
+    ],
+    "html": "semanas/analisis_repos_AIWS-22-06-2026.html",
+    "lenguaje": "Python",
+    "estrellas": 20300
+  },
+  {
+    "fecha": "2026-06-22",
+    "repo": "taoufik123-collab/claude-watch",
+    "url_repo": "https://github.com/taoufik123-collab/claude-watch",
+    "titulo": "Video Understanding Skill",
+    "resumen": "Le da a Claude la capacidad de \"ver\" cualquier video: extrae frames, transcribe y genera un reporte estructurado.",
+    "tags": [
+      "video",
+      "skills",
+      "claude code"
+    ],
+    "html": "semanas/analisis_repos_AIWS-22-06-2026.html",
+    "lenguaje": "Python"
+  },
+  {
+    "fecha": "2026-06-22",
+    "repo": "ferdinandobons/brand-docs",
+    "url_repo": "https://github.com/ferdinandobons/brand-docs",
+    "titulo": "Brand-Faithful Office Documents",
+    "resumen": "Convierte una plantilla de Word, PowerPoint o Excel en documentos corporativos ilimitados que respetan el manual de marca.",
+    "tags": [
+      "documentos",
+      "skills",
+      "ofimática"
+    ],
+    "html": "semanas/analisis_repos_AIWS-22-06-2026.html",
+    "lenguaje": "Python"
+  },
+  {
+    "fecha": "2026-06-15",
+    "repo": "cloudflare/agentic-inbox",
+    "url_repo": "https://github.com/cloudflare/agentic-inbox",
+    "titulo": "Email Agent · Edge Runtime",
+    "resumen": "Un cliente de email autoalojado con agente IA, corriendo entero sobre Cloudflare Workers.",
+    "tags": [
+      "email",
+      "agentes",
+      "mcp",
+      "edge"
+    ],
+    "html": "semanas/analisis_repos_AIWS-15-06-2026.html",
+    "lenguaje": "TypeScript"
+  },
+  {
+    "fecha": "2026-06-15",
+    "repo": "NangoHQ/nango",
+    "url_repo": "https://github.com/NangoHQ/nango",
+    "titulo": "Integration Platform",
+    "resumen": "Construye integraciones de producto con IA. 700+ APIs unificadas, runtime de producción.",
+    "tags": [
+      "integraciones",
+      "apis",
+      "mcp",
+      "oauth"
+    ],
+    "html": "semanas/analisis_repos_AIWS-15-06-2026.html",
+    "lenguaje": "TypeScript",
+    "estrellas": 7400
+  },
+  {
+    "fecha": "2026-06-15",
+    "repo": "brightbeanxyz/brightbean-studio",
+    "url_repo": "https://github.com/brightbeanxyz/brightbean-studio",
+    "titulo": "Social Media Platform",
+    "resumen": "Gestión de redes sociales open source. La alternativa libre a Buffer, Sendible y SocialPilot.",
+    "tags": [
+      "redes sociales",
+      "agentes",
+      "self-hosted"
+    ],
+    "html": "semanas/analisis_repos_AIWS-15-06-2026.html",
+    "lenguaje": "Python"
+  }
+]
