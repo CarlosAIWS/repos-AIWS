@@ -10,8 +10,10 @@
       "skills",
       "claude code"
     ],
-    "html": "semanas/analisis_repos_AIWS-29-06-2026.html",
-    "lenguaje": "Node.js"
+    "html": "semanas/analisis_repos_AIWS-29-06-2026.html#repo-brag",
+    "tema": "Skills en torno a Claude Code",
+    "lenguaje": "Node.js",
+    "licencia": "MIT-ish"
   },
   {
     "fecha": "2026-06-29",
@@ -24,8 +26,10 @@
       "local-first",
       "claude code"
     ],
-    "html": "semanas/analisis_repos_AIWS-29-06-2026.html",
-    "lenguaje": "Python"
+    "html": "semanas/analisis_repos_AIWS-29-06-2026.html#repo-recall",
+    "tema": "Skills en torno a Claude Code",
+    "lenguaje": "Python",
+    "licencia": "MIT"
   },
   {
     "fecha": "2026-06-29",
@@ -38,7 +42,9 @@
       "skills",
       "claude code"
     ],
-    "html": "semanas/analisis_repos_AIWS-29-06-2026.html",
+    "html": "semanas/analisis_repos_AIWS-29-06-2026.html#repo-humanizer",
+    "tema": "Skills en torno a Claude Code",
+    "licencia": "MIT",
     "estrellas": 25200
   },
   {
@@ -52,8 +58,10 @@
       "agentes",
       "extensión"
     ],
-    "html": "semanas/analisis_repos_AIWS-29-06-2026.html",
+    "html": "semanas/analisis_repos_AIWS-29-06-2026.html#repo-hermes-browser-extension",
+    "tema": "Skills en torno a Claude Code",
     "lenguaje": "JavaScript",
+    "licencia": "MIT",
     "estrellas": 12
   },
   {
@@ -67,8 +75,10 @@
       "agentes",
       "control"
     ],
-    "html": "semanas/analisis_repos_AIWS-29-06-2026.html",
+    "html": "semanas/analisis_repos_AIWS-29-06-2026.html#repo-vigils",
+    "tema": "Skills en torno a Claude Code",
     "lenguaje": "Rust",
+    "licencia": "Apache 2.0",
     "estrellas": 129
   },
   {
@@ -82,8 +92,10 @@
       "transcripción",
       "local-first"
     ],
-    "html": "semanas/analisis_repos_AIWS-22-06-2026.html",
+    "html": "semanas/analisis_repos_AIWS-22-06-2026.html#repo-meetily",
+    "tema": "Open source que merece una mirada",
     "lenguaje": "Rust",
+    "licencia": "MIT",
     "estrellas": 12800
   },
   {
@@ -97,8 +109,10 @@
       "coding",
       "costes"
     ],
-    "html": "semanas/analisis_repos_AIWS-22-06-2026.html",
+    "html": "semanas/analisis_repos_AIWS-22-06-2026.html#repo-codeburn",
+    "tema": "Open source que merece una mirada",
     "lenguaje": "TypeScript",
+    "licencia": "MIT",
     "estrellas": 2700
   },
   {
@@ -112,8 +126,10 @@
       "editor",
       "self-hosted"
     ],
-    "html": "semanas/analisis_repos_AIWS-22-06-2026.html",
+    "html": "semanas/analisis_repos_AIWS-22-06-2026.html#repo-opencut",
+    "tema": "Open source que merece una mirada",
     "lenguaje": "TypeScript",
+    "licencia": "MIT",
     "estrellas": 50200
   },
   {
@@ -127,8 +143,10 @@
       "skills",
       "agentes"
     ],
-    "html": "semanas/analisis_repos_AIWS-22-06-2026.html",
-    "lenguaje": "Python"
+    "html": "semanas/analisis_repos_AIWS-22-06-2026.html#repo-skillspector",
+    "tema": "Open source que merece una mirada",
+    "lenguaje": "Python",
+    "licencia": "Apache 2.0"
   },
   {
     "fecha": "2026-06-22",
@@ -141,8 +159,10 @@
       "scraping",
       "mcp"
     ],
-    "html": "semanas/analisis_repos_AIWS-22-06-2026.html",
+    "html": "semanas/analisis_repos_AIWS-22-06-2026.html#repo-agent-reach",
+    "tema": "Open source que merece una mirada",
     "lenguaje": "Python",
+    "licencia": "MIT",
     "estrellas": 20300
   },
   {
@@ -156,8 +176,10 @@
       "skills",
       "claude code"
     ],
-    "html": "semanas/analisis_repos_AIWS-22-06-2026.html",
-    "lenguaje": "Python"
+    "html": "semanas/analisis_repos_AIWS-22-06-2026.html#repo-claude-watch",
+    "tema": "Open source que merece una mirada",
+    "lenguaje": "Python",
+    "licencia": "MIT"
   },
   {
     "fecha": "2026-06-22",
@@ -170,8 +192,10 @@
       "skills",
       "ofimática"
     ],
-    "html": "semanas/analisis_repos_AIWS-22-06-2026.html",
-    "lenguaje": "Python"
+    "html": "semanas/analisis_repos_AIWS-22-06-2026.html#repo-brand-docs",
+    "tema": "Open source que merece una mirada",
+    "lenguaje": "Python",
+    "licencia": "MIT"
   },
   {
     "fecha": "2026-06-15",
@@ -185,8 +209,10 @@
       "mcp",
       "edge"
     ],
-    "html": "semanas/analisis_repos_AIWS-15-06-2026.html",
-    "lenguaje": "TypeScript"
+    "html": "semanas/analisis_repos_AIWS-15-06-2026.html#repo-agentic-inbox",
+    "tema": "Stack real para producción",
+    "lenguaje": "TypeScript",
+    "licencia": "Apache 2.0"
   },
   {
     "fecha": "2026-06-15",
@@ -200,8 +226,10 @@
       "mcp",
       "oauth"
     ],
-    "html": "semanas/analisis_repos_AIWS-15-06-2026.html",
+    "html": "semanas/analisis_repos_AIWS-15-06-2026.html#repo-nango",
+    "tema": "Stack real para producción",
     "lenguaje": "TypeScript",
+    "licencia": "Elastic",
     "estrellas": 7400
   },
   {
@@ -215,7 +243,9 @@
       "agentes",
       "self-hosted"
     ],
-    "html": "semanas/analisis_repos_AIWS-15-06-2026.html",
-    "lenguaje": "Python"
+    "html": "semanas/analisis_repos_AIWS-15-06-2026.html#repo-brightbean-studio",
+    "tema": "Stack real para producción",
+    "lenguaje": "Python",
+    "licencia": "AGPL-3.0"
   }
 ]

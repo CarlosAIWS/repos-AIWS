@@ -200,14 +200,14 @@
     .footer-bottom-line { flex-direction: column; align-items: flex-start; }
   }
 
-  /* ---------- DIRECTORIO: controles, chips, tarjetas ---------- */
-  .dir-stats { display:flex; gap:48px; flex-wrap:wrap; margin:0 0 52px; font-family:'JetBrains Mono',monospace; }
+  /* ---------- DIRECTORIO v2 ---------- */
+  .dir-stats { display:flex; gap:48px; flex-wrap:wrap; margin:0 0 44px; font-family:'JetBrains Mono',monospace; }
   .dir-stats .st b { display:block; font-family:'Sora',sans-serif; font-weight:800; font-size:34px; line-height:1;
     background:linear-gradient(135deg,#F2493F 0%,#D31F1B 60%,#9C0D0A 100%);
     -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; letter-spacing:-0.03em; }
   .dir-stats .st span { font-size:12px; color:var(--gray-mid); letter-spacing:0.20em; text-transform:uppercase; margin-top:8px; display:block; }
 
-  .dir-controls { display:flex; gap:16px; flex-wrap:wrap; align-items:center; margin:0 0 28px; }
+  .dir-controls { display:flex; gap:16px; flex-wrap:wrap; align-items:center; margin:0 0 24px; }
   .dir-search { flex:1; min-width:260px; position:relative; }
   .dir-search input { width:100%; background:var(--bg-card); border:1px solid var(--gray-border);
     color:var(--silver-bright); font-family:'Manrope',sans-serif; font-size:16px;
@@ -220,7 +220,7 @@
     padding:15px 22px; border-radius:4px; cursor:pointer; transition:all 0.2s ease; white-space:nowrap; font-weight:600; }
   .dir-sort:hover { border-color:rgba(211,31,27,0.45); color:var(--silver-bright); }
 
-  .dir-tags { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:48px; }
+  .dir-tags { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:20px; }
   .dir-chip { font-family:'JetBrains Mono',monospace; font-size:14px; color:var(--silver-muted);
     background:rgba(255,255,255,0.04); border:1px solid var(--gray-border); padding:8px 16px; border-radius:3px;
     letter-spacing:0.03em; font-weight:500; cursor:pointer; transition:all 0.18s ease; }
@@ -228,36 +228,52 @@
   .dir-chip.active { background:linear-gradient(135deg,var(--red-primary) 0%,var(--red-dark) 100%);
     border-color:var(--red-dark); color:#FFFFFF; }
 
-  .dir-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(380px,1fr)); gap:28px; }
+  .dir-count { font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--gray-mid);
+    letter-spacing:0.10em; text-transform:uppercase; margin-bottom:40px; }
+  .dir-count b { color:var(--silver-muted); }
+
+  /* Grupo por semana */
+  .dir-group { margin-bottom:56px; }
+  .dir-group-head { display:flex; align-items:baseline; gap:20px; margin-bottom:26px;
+    padding-bottom:16px; border-bottom:1px solid var(--gray-border); position:relative; }
+  .dir-group-head::before { content:''; position:absolute; bottom:-1px; left:0; width:80px; height:2px; background:var(--red-primary); }
+  .dgh-left { display:flex; align-items:baseline; gap:16px; flex-wrap:wrap; flex:1; }
+  .dgh-date { font-family:'Sora',sans-serif; font-weight:700; font-size:22px; color:var(--silver-bright); letter-spacing:-0.01em; white-space:nowrap; }
+  .dgh-theme { font-family:'Manrope',sans-serif; font-size:16px; color:var(--silver-muted); }
+  .dgh-count { font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--red-primary);
+    letter-spacing:0.16em; text-transform:uppercase; font-weight:600; white-space:nowrap; }
+
+  .dir-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(360px,1fr)); gap:24px; }
   .dir-card { background:var(--bg-card); border:1px solid var(--gray-border); border-radius:6px;
-    padding:32px 32px 28px; position:relative; display:flex; flex-direction:column; gap:18px;
-    transition:border-color 0.25s ease, background 0.25s ease, transform 0.25s ease; animation:cardRise 0.5s both; }
+    padding:28px 28px 24px; position:relative; display:flex; flex-direction:column; gap:16px;
+    transition:border-color 0.25s ease, background 0.25s ease, transform 0.25s ease; animation:cardRise 0.45s both; }
   .dir-card::before { content:''; position:absolute; top:0; left:0; width:4px; height:100%;
     background:linear-gradient(180deg,var(--red-primary) 0%,var(--red-dark) 100%);
     opacity:0; transition:opacity 0.25s ease; border-radius:6px 0 0 6px; }
   .dir-card:hover { border-color:rgba(211,31,27,0.45); background:var(--bg-card-hover); transform:translateY(-3px); }
   .dir-card:hover::before { opacity:1; }
-  @keyframes cardRise { from{opacity:0; transform:translateY(14px);} to{opacity:1; transform:none;} }
+  @keyframes cardRise { from{opacity:0; transform:translateY(12px);} to{opacity:1; transform:none;} }
 
-  .dc-top { display:flex; justify-content:space-between; align-items:center; gap:14px; }
-  .dc-date { font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--red-primary);
-    letter-spacing:0.16em; text-transform:uppercase; font-weight:600; }
-  .dc-lang { font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:0.10em; text-transform:uppercase;
-    color:var(--silver-muted); background:rgba(255,255,255,0.025); border:1px solid var(--gray-border);
-    padding:6px 12px; border-radius:3px; white-space:nowrap; font-weight:500; }
-  .dc-repo { font-family:'JetBrains Mono',monospace; font-size:15px; color:var(--silver-muted);
-    letter-spacing:0.02em; word-break:break-all; font-weight:500; }
-  .dc-repo .slash { color:var(--red-primary); }
-  .dc-title { font-family:'Sora',sans-serif; font-weight:700; font-size:24px; letter-spacing:-0.02em;
-    color:var(--silver-bright); line-height:1.2; }
+  .dc-head { display:flex; justify-content:space-between; align-items:flex-start; gap:14px; }
+  .dc-eyebrow { font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--red-primary);
+    letter-spacing:0.18em; text-transform:uppercase; font-weight:600; margin-bottom:8px; }
+  .dc-name { font-family:'Sora',sans-serif; font-weight:700; font-size:26px; letter-spacing:-0.02em;
+    color:var(--silver-bright); line-height:1.1; word-break:break-word; }
+  .dc-name .dc-owner { color:var(--gray-mid); font-weight:400; font-size:16px; }
+  .dc-stars { font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--silver-muted);
+    background:rgba(255,255,255,0.025); border:1px solid var(--gray-border); padding:6px 12px;
+    border-radius:3px; white-space:nowrap; font-weight:500; flex-shrink:0; }
   .dc-desc { font-size:16px; color:var(--silver-muted); line-height:1.5; flex:1; }
   .dc-tags { display:flex; flex-wrap:wrap; gap:8px; }
-  .dc-tags span { font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--silver-bright);
-    background:rgba(255,255,255,0.04); border:1px solid var(--gray-border); padding:6px 12px; border-radius:3px;
+  .dc-tags span { font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--silver-bright);
+    background:rgba(255,255,255,0.04); border:1px solid var(--gray-border); padding:5px 11px; border-radius:3px;
     letter-spacing:0.03em; font-weight:500; }
-  .dc-meta { font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--gray-mid); letter-spacing:0.06em; }
-  .dc-meta .star { color:var(--silver-muted); }
-  .dc-cta { display:flex; gap:12px; margin-top:4px; padding-top:22px; border-top:1px solid var(--gray-border); }
+  .dc-meta { display:flex; flex-wrap:wrap; gap:8px; }
+  .dc-pill { font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--gray-mid);
+    letter-spacing:0.10em; text-transform:uppercase; border:1px solid var(--gray-border);
+    padding:5px 11px; border-radius:3px; font-weight:500; }
+  .dc-pill-lic { color:var(--silver-muted); }
+  .dc-cta { display:flex; gap:12px; margin-top:4px; padding-top:20px; border-top:1px solid var(--gray-border); }
   .dc-btn { flex:1; text-align:center; font-family:'Sora',sans-serif; font-weight:700; font-size:14px;
     letter-spacing:0.06em; text-transform:uppercase; padding:13px 10px; border-radius:3px;
     text-decoration:none; transition:all 0.2s ease; }
@@ -268,7 +284,7 @@
   .dc-btn-ghost { color:var(--silver-muted); border:1px solid var(--gray-border); }
   .dc-btn-ghost:hover { border-color:rgba(211,31,27,0.45); color:var(--silver-bright); }
 
-  .dir-empty { grid-column:1/-1; text-align:center; padding:70px 0; color:var(--gray-mid);
+  .dir-empty { text-align:center; padding:70px 0; color:var(--gray-mid);
     font-family:'JetBrains Mono',monospace; font-size:14px; line-height:1.9; letter-spacing:0.04em; }
   .dir-empty b { color:var(--red-light); }
 
@@ -277,6 +293,7 @@
     .dir-controls{ flex-direction:column; align-items:stretch; }
     .dir-sort{ width:100%; }
     .dir-stats{ gap:32px; }
+    .dgh-date{ font-size:19px; }
   }
 
 </style>
@@ -305,34 +322,36 @@
     <span class="red-accent">para la comunidad</span>
   </h1>
   <p class="hero-intro">
-    Cada repositorio que repasamos en el directo de los lunes, indexado por fecha. Busca, filtra por tem&aacute;tica y abre el an&aacute;lisis completo.
+    Cada repositorio que repasamos en el directo de los lunes, agrupado por sesi&oacute;n. Busca, filtra por tem&aacute;tica y abre el an&aacute;lisis directo de cada repo.
   </p>
 </section>
 
 <div class="summary">
   <div class="summary-label">C&oacute;mo usar este directorio</div>
   <div class="summary-text">
-    Un archivo vivo de los repositorios revisados cada semana. Cada ficha enlaza al <strong>an&aacute;lisis completo</strong> y al repositorio original. El orden es por <strong>fecha de publicaci&oacute;n y nombre del fichero</strong>.
+    Un archivo vivo de los repositorios revisados cada semana. Cada ficha salta al <strong>an&aacute;lisis exacto</strong> de ese repo y enlaza a su repositorio. Ordenado por fecha, agrupado por sesi&oacute;n.
   </div>
 </div>
 
 <div class="dir-stats">
   <div class="st"><b id="stat-total">&mdash;</b><span>Repos</span></div>
+  <div class="st"><b id="stat-weeks">&mdash;</b><span>Sesiones</span></div>
   <div class="st"><b id="stat-tags">&mdash;</b><span>Tem&aacute;ticas</span></div>
-  <div class="st"><b id="stat-last">&mdash;</b><span>&Uacute;ltima actualizaci&oacute;n</span></div>
+  <div class="st"><b id="stat-last">&mdash;</b><span>&Uacute;ltima</span></div>
 </div>
 
 <div class="dir-controls">
   <div class="dir-search">
     <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-    <input id="q" type="text" placeholder="Buscar por repo, t&iacute;tulo o tem&aacute;tica&hellip;" autocomplete="off">
+    <input id="q" type="text" placeholder="Buscar por repo, categor&iacute;a o tem&aacute;tica&hellip;" autocomplete="off">
   </div>
   <button class="dir-sort" id="sort">&darr; M&aacute;s recientes</button>
 </div>
 
 <div class="dir-tags" id="tags"></div>
+<div class="dir-count" id="count"></div>
 
-<div class="dir-grid" id="grid"><div class="dir-empty">Cargando repositorios&hellip;</div></div>
+<div id="groups"><div class="dir-empty">Cargando repositorios&hellip;</div></div>
 
 <footer class="bottom">
   <div class="footer-grid">
@@ -358,21 +377,16 @@
 </div>
 
 <script>
-/* ============================================================
-   No se toca cada semana. Lee los datos de repos.json.
-   Cada semana solo editas repos.json y subes el HTML a /semanas/.
-   NOTA: fetch() no funciona abriendo el fichero con doble clic
-   (file://). Se ve en GitHub Pages o con un servidor local.
-   ============================================================ */
 let REPOS = [];
 let query = "";
 let activeTag = null;
 let sortDesc = true;
 
-const grid = document.getElementById('grid');
+const groupsEl = document.getElementById('groups');
 const tagsBar = document.getElementById('tags');
 const qInput = document.getElementById('q');
 const sortBtn = document.getElementById('sort');
+const countEl = document.getElementById('count');
 
 const fmtDate = iso => {
   const [y,m,d] = iso.split('-');
@@ -380,11 +394,14 @@ const fmtDate = iso => {
   return d + ' ' + meses[+m-1] + ' ' + y;
 };
 const fmtStars = n => (n==null) ? '' : (n >= 1000 ? (n/1000).toFixed(1).replace('.0','') + 'k' : n);
+const esc = s => (s==null?'':String(s));
 
 function paintStats(){
   const allTags = new Set(REPOS.flatMap(r => r.tags || []));
+  const weeks = new Set(REPOS.map(r => r.fecha));
   const last = REPOS.reduce((a,b) => a.fecha > b.fecha ? a : b).fecha;
   document.getElementById('stat-total').textContent = REPOS.length;
+  document.getElementById('stat-weeks').textContent = weeks.size;
   document.getElementById('stat-tags').textContent = allTags.size;
   document.getElementById('stat-last').textContent = fmtDate(last);
 }
@@ -392,7 +409,7 @@ function paintStats(){
 function paintTags(){
   const counts = {};
   REPOS.forEach(r => (r.tags||[]).forEach(t => counts[t] = (counts[t]||0)+1));
-  const sorted = Object.entries(counts).sort((a,b) => b[1]-a[1]);
+  const sorted = Object.entries(counts).sort((a,b) => b[1]-a[1] || a[0].localeCompare(b[0]));
   tagsBar.innerHTML = '';
   const all = document.createElement('button');
   all.className = 'dir-chip' + (activeTag===null ? ' active':'');
@@ -403,14 +420,39 @@ function paintTags(){
     const b = document.createElement('button');
     b.className = 'dir-chip' + (activeTag===t ? ' active':'');
     b.textContent = t + ' \u00b7 ' + c;
-    b.onclick = () => { activeTag = activeTag===t ? null : t; render(); };
+    b.onclick = () => { activeTag = (activeTag===t ? null : t); render(); };
     tagsBar.appendChild(b);
   });
 }
 
+function cardHtml(r){
+  const parts = r.repo.includes('/') ? r.repo.split('/') : ['', r.repo];
+  const owner = parts[0], name = parts.slice(1).join('/');
+  return ''
+    + '<article class="dir-card">'
+    +   '<div class="dc-head">'
+    +     '<div>'
+    +       '<div class="dc-eyebrow">' + esc(r.titulo) + '</div>'
+    +       '<div class="dc-name">' + (owner ? '<span class="dc-owner">' + owner + ' /</span> ' : '') + name + '</div>'
+    +     '</div>'
+    +     (r.estrellas!=null ? '<span class="dc-stars">\u2605 ' + fmtStars(r.estrellas) + '</span>' : '')
+    +   '</div>'
+    +   '<p class="dc-desc">' + esc(r.resumen) + '</p>'
+    +   '<div class="dc-tags">' + (r.tags||[]).map(t => '<span>' + esc(t) + '</span>').join('') + '</div>'
+    +   '<div class="dc-meta">'
+    +     (r.lenguaje ? '<span class="dc-pill">' + esc(r.lenguaje) + '</span>' : '')
+    +     (r.licencia ? '<span class="dc-pill dc-pill-lic">' + esc(r.licencia) + '</span>' : '')
+    +   '</div>'
+    +   '<div class="dc-cta">'
+    +     '<a class="dc-btn dc-btn-primary" href="' + esc(r.html) + '">Ver an\u00e1lisis</a>'
+    +     '<a class="dc-btn dc-btn-ghost" href="' + esc(r.url_repo) + '" target="_blank" rel="noopener">Ir al repo \u2197</a>'
+    +   '</div>'
+    + '</article>';
+}
+
 function render(){
   let list = REPOS.filter(r => {
-    const hay = (r.repo + r.titulo + r.resumen + (r.tags||[]).join(' ')).toLowerCase();
+    const hay = (r.repo + ' ' + r.titulo + ' ' + r.resumen + ' ' + (r.tags||[]).join(' ')).toLowerCase();
     const matchQ = !query || hay.includes(query);
     const matchTag = !activeTag || (r.tags||[]).includes(activeTag);
     return matchQ && matchTag;
@@ -418,29 +460,39 @@ function render(){
   list.sort((a,b) => {
     const byDate = sortDesc ? b.fecha.localeCompare(a.fecha) : a.fecha.localeCompare(b.fecha);
     if (byDate !== 0) return byDate;
-    return (a.html||'').localeCompare(b.html||''); // a igualdad de fecha, ordena por nombre del HTML
+    return (a.html||'').localeCompare(b.html||'');
   });
   paintTags();
-  if(!list.length){ grid.innerHTML = '<div class="dir-empty">Sin resultados para el filtro actual.</div>'; return; }
-  grid.innerHTML = list.map((r,i) => {
-    const parts = r.repo.includes('/') ? r.repo.split('/') : ['', r.repo];
-    const repoHtml = parts[0] ? parts[0] + '<span class="slash">/</span>' + parts.slice(1).join('/') : r.repo;
+
+  // feedback de recuento
+  const filtering = !!(query || activeTag);
+  countEl.innerHTML = filtering
+    ? ('Mostrando <b>' + list.length + '</b> de ' + REPOS.length + ' repos')
+    : ('<b>' + REPOS.length + '</b> repos en ' + new Set(REPOS.map(r=>r.fecha)).size + ' sesiones');
+
+  if(!list.length){ groupsEl.innerHTML = '<div class="dir-empty">Sin resultados para el filtro actual.</div>'; return; }
+
+  // agrupar por fecha conservando el orden ya ordenado
+  const order = [], byFecha = {};
+  list.forEach(r => {
+    if(byFecha[r.fecha]===undefined){ byFecha[r.fecha] = {fecha:r.fecha, tema:r.tema, items:[]}; order.push(r.fecha); }
+    byFecha[r.fecha].items.push(r);
+  });
+
+  groupsEl.innerHTML = order.map(f => {
+    const g = byFecha[f];
+    const n = g.items.length;
     return ''
-      + '<article class="dir-card" style="animation-delay:' + (i*45) + 'ms">'
-      +   '<div class="dc-top">'
-      +     '<span class="dc-date">' + fmtDate(r.fecha) + '</span>'
-      +     (r.lenguaje ? '<span class="dc-lang">' + r.lenguaje + '</span>' : '')
+      + '<section class="dir-group">'
+      +   '<div class="dir-group-head">'
+      +     '<div class="dgh-left">'
+      +       '<span class="dgh-date">' + fmtDate(g.fecha) + '</span>'
+      +       (g.tema ? '<span class="dgh-theme">' + esc(g.tema) + '</span>' : '')
+      +     '</div>'
+      +     '<span class="dgh-count">' + n + ' repo' + (n>1?'s':'') + '</span>'
       +   '</div>'
-      +   '<div class="dc-repo">' + repoHtml + '</div>'
-      +   '<h3 class="dc-title">' + r.titulo + '</h3>'
-      +   '<p class="dc-desc">' + r.resumen + '</p>'
-      +   '<div class="dc-tags">' + (r.tags||[]).map(t => '<span>' + t + '</span>').join('') + '</div>'
-      +   (r.estrellas!=null ? '<div class="dc-meta"><span class="star">\u2605 ' + fmtStars(r.estrellas) + '</span></div>' : '')
-      +   '<div class="dc-cta">'
-      +     '<a class="dc-btn dc-btn-primary" href="' + r.html + '">Ver an\u00e1lisis</a>'
-      +     '<a class="dc-btn dc-btn-ghost" href="' + r.url_repo + '" target="_blank" rel="noopener">Ir al repo \u2197</a>'
-      +   '</div>'
-      + '</article>';
+      +   '<div class="dir-grid">' + g.items.map(cardHtml).join('') + '</div>'
+      + '</section>';
   }).join('');
 }
 
@@ -457,12 +509,12 @@ async function load(){
     if(!res.ok) throw new Error('HTTP ' + res.status);
     REPOS = await res.json();
     if(!Array.isArray(REPOS) || !REPOS.length){
-      grid.innerHTML = '<div class="dir-empty">repos.json est\u00e1 vac\u00edo. A\u00f1ade tu primera entrada.</div>'; return;
+      groupsEl.innerHTML = '<div class="dir-empty">repos.json est\u00e1 vac\u00edo. A\u00f1ade tu primera entrada.</div>'; return;
     }
     paintStats();
     render();
   }catch(err){
-    grid.innerHTML = '<div class="dir-empty">'
+    groupsEl.innerHTML = '<div class="dir-empty">'
       + 'No se ha podido cargar <b>repos.json</b>.<br>'
       + 'Si has abierto este archivo con doble clic (ruta file://), el navegador bloquea la carga por seguridad.<br>'
       + 'S\u00fabelo a GitHub Pages, o pru\u00e9balo con un servidor local, para verlo funcionar.<br>'
