@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 repos open source en el radar · AI Workflow Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-deep: #000000; --bg-card: #0a0a0a; --bg-card-hover: #0d0d0d;
+    --red-primary: #D31F1B; --red-dark: #9C0D0A; --red-light: #F2493F;
+    --silver-bright: #F1F1F1; --silver-muted: #BDBDBD;
+    --gray-mid: #7F7F7F; --gray-border: #1a1a1a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--bg-deep); color: var(--silver-bright);
+    font-family: 'Manrope', sans-serif; font-weight: 400; line-height: 1.55;
+    overflow-x: hidden; -webkit-font-smoothing: antialiased;
+  }
+  body::before {
+    content: ''; position: fixed; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+    background-size: 56px 56px; pointer-events: none; z-index: 0;
+  }
+  body::after {
+    content: ''; position: fixed; top: -350px; right: -250px;
+    width: 850px; height: 850px;
+    background: radial-gradient(circle, rgba(211,31,27,0.12) 0%, rgba(211,31,27,0.05) 35%, transparent 70%);
+    pointer-events: none; z-index: 0; filter: blur(20px);
+  }
+  .container { position: relative; z-index: 1; max-width: 1280px; margin: 0 auto; padding: 56px 40px 80px; }
+  header.top { display: flex; align-items: center; justify-content: space-between;
+    padding-bottom: 32px; border-bottom: 1px solid var(--gray-border); margin-bottom: 64px; }
+  .brand-mark { display: flex; align-items: center; gap: 18px; }
+  .brand-mark .brand-logo { height: 56px; width: auto; display: block; }
+  .brand-mark .brand-text { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 18px;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--silver-bright); }
+  .brand-mark .brand-sub { font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    color: var(--gray-mid); letter-spacing: 0.18em; text-transform: uppercase; margin-top: 4px; }
+  .doc-meta { text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 13px;
+    color: var(--gray-mid); letter-spacing: 0.14em; text-transform: uppercase; line-height: 1.6; }
+  .doc-meta .doc-id { color: var(--red-primary); font-weight: 600; }
+  .hero { margin-bottom: 56px; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 14px;
+    font-family: 'JetBrains Mono', monospace; font-size: 15px; color: var(--red-primary);
+    letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 28px; font-weight: 600; }
+  .eyebrow::before { content: ''; width: 40px; height: 2px; background: var(--red-primary); }
+  h1.hero-title { font-family: 'Sora', sans-serif; font-weight: 700;
+    font-size: clamp(52px, 7vw, 84px); line-height: 1.0; letter-spacing: -0.025em;
+    margin-bottom: 28px; color: var(--silver-bright); }
+  h1.hero-title .accent { background: linear-gradient(135deg, #FFFFFF 0%, #BDBDBD 50%, #7F7F7F 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  h1.hero-title .red-accent { background: linear-gradient(135deg, #F2493F 0%, #D31F1B 50%, #9C0D0A 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero-intro { font-size: 24px; color: var(--silver-muted); max-width: 900px; line-height: 1.5; }
+  .summary { background: linear-gradient(135deg, rgba(211,31,27,0.06) 0%, rgba(0,0,0,0) 100%);
+    border-left: 4px solid var(--red-primary); padding: 32px 40px; margin: 48px 0 72px; }
+  .summary-label { font-family: 'JetBrains Mono', monospace; font-size: 14px;
+    color: var(--red-primary); letter-spacing: 0.22em; text-transform: uppercase;
+    margin-bottom: 16px; font-weight: 600; }
+  .summary-text { font-size: 21px; color: var(--silver-bright); line-height: 1.55; }
+  .summary-text strong { color: var(--red-light); font-weight: 600; }
+  .repo-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
+  .repo-card { background: var(--bg-card); border: 1px solid var(--gray-border);
+    border-radius: 6px; padding: 48px 48px 44px; position: relative;
+    transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease; }
+  .repo-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+    background: linear-gradient(180deg, var(--red-primary) 0%, var(--red-dark) 100%);
+    opacity: 0; transition: opacity 0.25s ease; border-radius: 6px 0 0 6px; }
+  .repo-card:hover { border-color: rgba(211,31,27,0.45); background: var(--bg-card-hover); transform: translateY(-3px); }
+  .repo-card:hover::before { opacity: 1; }
+  .card-head { display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 32px; margin-bottom: 32px; padding-bottom: 28px;
+    border-bottom: 1px solid var(--gray-border); flex-wrap: wrap; }
+  .card-title-wrap { flex: 1; min-width: 0; }
+  .card-number { display: inline-flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+  .card-number .num { font-family: 'Sora', sans-serif; font-weight: 800; font-size: 56px; line-height: 1;
+    background: linear-gradient(135deg, #F2493F 0%, #D31F1B 60%, #9C0D0A 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    letter-spacing: -0.04em; }
+  .card-number .category { font-family: 'JetBrains Mono', monospace; font-size: 14px;
+    color: var(--gray-mid); letter-spacing: 0.20em; text-transform: uppercase; font-weight: 600; }
+  .repo-name { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 42px;
+    letter-spacing: -0.02em; color: var(--silver-bright); line-height: 1.05;
+    margin-bottom: 16px; word-wrap: break-word; }
+  .repo-name .handle { color: var(--gray-mid); font-weight: 400; font-size: 26px; }
+  .repo-name .name-accent { background: linear-gradient(135deg, #FFFFFF 0%, #BDBDBD 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .repo-tagline { font-size: 20px; color: var(--silver-muted); line-height: 1.45; }
+  .card-stats { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; flex-shrink: 0; }
+  .stat-pill { font-family: 'JetBrains Mono', monospace; font-size: 13px;
+    letter-spacing: 0.10em; text-transform: uppercase; color: var(--silver-muted);
+    background: rgba(255,255,255,0.025); border: 1px solid var(--gray-border);
+    padding: 7px 14px; border-radius: 3px; display: inline-flex; align-items: center;
+    gap: 8px; white-space: nowrap; font-weight: 500; }
+  .stat-pill .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--red-primary); }
+  .stat-pill .dot.silver { background: var(--silver-muted); }
+  .one-liner { background: linear-gradient(135deg, rgba(211,31,27,0.05) 0%, rgba(0,0,0,0) 100%);
+    border-left: 3px solid var(--red-primary); padding: 18px 24px; margin-bottom: 32px; }
+  .one-liner .label { font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--red-primary); letter-spacing: 0.22em; text-transform: uppercase;
+    font-weight: 700; margin-bottom: 6px; }
+  .one-liner .text { font-size: 18px; color: var(--silver-bright); line-height: 1.5;
+    font-weight: 500; font-style: italic; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; margin-bottom: 32px; }
+  .col-block .col-label { font-family: 'JetBrains Mono', monospace; font-size: 13px;
+    color: var(--red-primary); letter-spacing: 0.22em; text-transform: uppercase;
+    margin-bottom: 18px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+  .col-block .col-label::before { content: ''; width: 8px; height: 8px;
+    background: var(--red-primary); border-radius: 50%; }
+  .col-block ul { list-style: none; padding: 0; }
+  .col-block ul li { font-size: 17px; color: var(--silver-bright); line-height: 1.5;
+    padding-left: 22px; position: relative; margin-bottom: 14px; }
+  .col-block ul li::before { content: ''; position: absolute; left: 0; top: 10px;
+    width: 12px; height: 1px; background: var(--red-primary); }
+  .col-block ul li strong { color: #FFFFFF; font-weight: 600; }
+  .col-block ul li .metal { background: linear-gradient(135deg, #FFFFFF 0%, #BDBDBD 100%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    font-weight: 600; }
+  .stack-row { margin-top: 28px; padding-top: 28px; border-top: 1px solid var(--gray-border); }
+  .stack-label { font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    color: var(--gray-mid); letter-spacing: 0.22em; text-transform: uppercase;
+    margin-bottom: 14px; font-weight: 600; }
+  .stack-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+  .tag { font-family: 'JetBrains Mono', monospace; font-size: 14px; color: var(--silver-bright);
+    background: rgba(255,255,255,0.04); border: 1px solid var(--gray-border);
+    padding: 7px 14px; border-radius: 3px; letter-spacing: 0.03em; font-weight: 500; }
+  .card-cta { display: flex; justify-content: space-between; align-items: center;
+    margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--gray-border);
+    flex-wrap: wrap; gap: 20px; }
+  .repo-url { font-family: 'JetBrains Mono', monospace; font-size: 16px;
+    color: var(--silver-muted); letter-spacing: 0.02em; word-break: break-all; font-weight: 500; }
+  .repo-url .slash { color: var(--red-primary); }
+  .btn-github { display: inline-flex; align-items: center; gap: 12px;
+    font-family: 'Sora', sans-serif; font-weight: 700; font-size: 17px;
+    letter-spacing: 0.06em; text-transform: uppercase; color: var(--silver-bright);
+    background: linear-gradient(135deg, var(--red-primary) 0%, var(--red-dark) 100%);
+    padding: 16px 32px; border-radius: 3px; text-decoration: none;
+    border: 1px solid var(--red-dark); transition: all 0.2s ease; white-space: nowrap; }
+  .btn-github:hover { background: linear-gradient(135deg, var(--red-light) 0%, var(--red-primary) 100%);
+    box-shadow: 0 0 28px 0 rgba(211,31,27,0.40); transform: translateY(-2px); }
+  .btn-github svg { width: 20px; height: 20px; fill: currentColor; }
+  footer.bottom { margin-top: 96px; padding-top: 44px;
+    border-top: 1px solid var(--gray-border); position: relative; }
+  footer.bottom::before { content: ''; position: absolute; top: -2px; left: 0;
+    width: 100px; height: 2px; background: var(--red-primary); }
+  .footer-grid { display: grid; grid-template-columns: auto 1fr auto;
+    gap: 48px; align-items: center; }
+  .footer-brand { display: flex; align-items: center; gap: 18px; }
+  .footer-brand .brand-logo-footer { height: 46px; width: auto; opacity: 0.92; display: block; }
+  .footer-brand .ft-text { font-family: 'Sora', sans-serif; font-weight: 700;
+    font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--silver-muted); }
+  .footer-contact { display: flex; gap: 36px; justify-content: center; flex-wrap: wrap; }
+  .footer-contact a { font-family: 'JetBrains Mono', monospace; font-size: 15px;
+    color: var(--silver-bright); text-decoration: none; letter-spacing: 0.04em;
+    display: inline-flex; align-items: center; gap: 10px; font-weight: 500;
+    transition: color 0.2s ease; }
+  .footer-contact a:hover { color: var(--red-primary); }
+  .footer-contact a::before { content: ''; width: 6px; height: 6px;
+    border-radius: 50%; background: var(--red-primary); }
+  .footer-meta { font-family: 'Sora', sans-serif; font-size: 14px; color: var(--silver-muted);
+    letter-spacing: 0.08em; text-transform: uppercase; text-align: right;
+    line-height: 1.6; font-weight: 500; }
+  .footer-meta .role { color: var(--gray-mid); font-weight: 400; }
+  .footer-bottom-line { margin-top: 36px; padding-top: 24px;
+    border-top: 1px solid var(--gray-border); display: flex;
+    justify-content: space-between; align-items: center;
+    font-family: 'JetBrains Mono', monospace; font-size: 13px;
+    color: var(--gray-mid); letter-spacing: 0.12em; text-transform: uppercase;
+    flex-wrap: wrap; gap: 14px; font-weight: 500; }
+  .footer-bottom-line .red-tag { color: var(--red-primary); }
+  @media (max-width: 1024px) { .two-col { grid-template-columns: 1fr; gap: 28px; } }
+  @media (max-width: 720px) {
+    .container { padding: 36px 22px 60px; }
+    header.top { flex-direction: column; gap: 22px; align-items: flex-start; }
+    .doc-meta { text-align: left; }
+    .repo-card { padding: 32px 26px 28px; }
+    .card-number .num { font-size: 42px; }
+    .repo-name { font-size: 28px; }
+    .repo-name .handle { font-size: 17px; }
+    .repo-tagline { font-size: 17px; }
+    .col-block ul li { font-size: 16px; }
+    .one-liner .text { font-size: 16px; }
+    .hero-intro { font-size: 19px; }
+    .summary-text { font-size: 18px; }
+    .summary { padding: 24px 26px; }
+    .card-head { flex-direction: column; }
+    .card-stats { flex-direction: row; align-items: flex-start; }
+    .card-cta { flex-direction: column; align-items: stretch; }
+    .btn-github { width: 100%; justify-content: center; }
+    .footer-grid { grid-template-columns: 1fr; gap: 28px; text-align: center; }
+    .footer-meta { text-align: center; }
+    .footer-contact { justify-content: flex-start; }
+    .footer-bottom-line { flex-direction: column; align-items: flex-start; }
+  }
+
+  /* HERMES-SOLO-CSS */
+  /* --- Salto directo: resaltar el repo de destino --- */
+  .repo-card{scroll-margin-top:32px}
+  .repo-card:target{border-color:var(--red-primary)!important;
+    box-shadow:0 0 0 2px rgba(211,31,27,.45),0 0 60px rgba(211,31,27,.18)!important}
+  .repo-card:target::before{opacity:1!important}
+  /* --- Modo "un solo repo" (al llegar por enlace directo) --- */
+  #solo-banner{display:none}
+  body.solo-repo #solo-banner{display:flex}
+  body.solo-repo .repo-card:not(:target){display:none}
+  body.solo-repo .hero,body.solo-repo .summary{display:none}
+  #solo-banner{align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+    background:linear-gradient(135deg,rgba(211,31,27,0.08) 0%,rgba(0,0,0,0) 100%);
+    border:1px solid var(--gray-border);border-left:3px solid var(--red-primary);
+    border-radius:4px;padding:16px 22px;margin-bottom:36px}
+  #solo-banner .sb-left{display:flex;align-items:center;gap:20px;flex-wrap:wrap;
+    font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--gray-mid);letter-spacing:0.06em}
+  #solo-banner a.sb-back{color:var(--silver-bright);text-decoration:none;font-weight:600;
+    font-family:'JetBrains Mono',monospace;letter-spacing:0.04em;transition:color .2s ease;white-space:nowrap}
+  #solo-banner a.sb-back:hover{color:var(--red-primary)}
+  #solo-banner .sb-btn{font-family:'Sora',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.06em;
+    text-transform:uppercase;color:var(--silver-bright);background:transparent;border:1px solid var(--gray-border);
+    padding:11px 20px;border-radius:3px;cursor:pointer;transition:all .2s ease;white-space:nowrap}
+  #solo-banner .sb-btn:hover{border-color:var(--red-primary);color:var(--red-primary)}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header class="top">
+  <div class="brand-mark">
+    <img src="data:image/jpeg;base64,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" alt="AI Workflow Solutions" class="brand-logo">
+    <div>
+      <div class="brand-text">AI Workflow Solutions</div>
+      <div class="brand-sub">Industrial AI Engineering</div>
+    </div>
+  </div>
+  <div class="doc-meta">
+    <div class="doc-id">● Research Log</div>
+    <div>5 repositorios open source</div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="eyebrow">5 repos en el radar</div>
+  <h1 class="hero-title">
+    <span class="accent">Open source</span><br>
+    <span class="red-accent">self-hosted y agentes</span>
+  </h1>
+  <p class="hero-intro">
+    Cinco proyectos que van de la documentación pensada para agentes IA a plataformas de voz self-hosted, pasando por bookmarks, viajes y code intelligence sobre MCP.
+  </p>
+</section>
+
+<div class="summary">
+  <div class="summary-label">De qué va este documento</div>
+  <div class="summary-text">
+    Un repaso neutro de <strong>cinco repositorios distintos</strong>. Para cada uno: una frase que resume lo que hace, qué funcionalidades trae y qué características lo hacen interesante. Sin recomendaciones ni juicios, solo información.
+  </div>
+</div>
+
+<!-- HERMES-SOLO-BANNER -->
+<div id="solo-banner">
+  <div class="sb-left">
+    <a class="sb-back" href="../index.html">&larr; Volver al directorio</a>
+    <span id="sb-info"></span>
+  </div>
+  <button class="sb-btn" id="sb-showall">Ver todos los de esta sesi&oacute;n</button>
+</div>
+<div class="repo-grid">
+  <article class="repo-card" id="repo-openwiki">
+    <div class="card-head">
+      <div class="card-title-wrap">
+        <div class="card-number">
+          <span class="num">01</span>
+          <span class="category">Agent Documentation CLI</span>
+        </div>
+        <div class="repo-name"><span class="handle">langchain-ai /</span> <span class="name-accent">openwiki</span></div>
+        <div class="repo-tagline">CLI que escribe y mantiene documentación de tu codebase pensada para que la lean los agentes IA.</div>
+      </div>
+      <div class="card-stats">
+        <span class="stat-pill"><span class="dot"></span>2.9k &#9733; &middot; 234 forks</span>
+        <span class="stat-pill"><span class="dot silver"></span>MIT License</span>
+      </div>
+    </div>
+
+    <div class="one-liner">
+      <div class="label">En una frase</div>
+      <div class="text">Un comando y tu repositorio queda documentado en una carpeta openwiki/, con un PR diario que la mantiene al día vía GitHub Actions.</div>
+    </div>
+
+    <div class="two-col">
+      <div class="col-block">
+        <div class="col-label">Funcionalidades</div>
+        <ul>
+          <li>Instalación global con <span class="metal">npm install -g openwiki</span>.</li>
+          <li><strong>openwiki --init</strong> configura modelo y API key.</li>
+          <li><strong>openwiki --update</strong> refresca la doc con los cambios del repo.</li>
+          <li>Modo <span class="metal">one-shot</span> con -p o interactivo por defecto.</li>
+        </ul>
+      </div>
+      <div class="col-block">
+        <div class="col-label">Características</div>
+        <ul>
+          <li>Añade prompts automáticamente a <span class="metal">AGENTS.md</span> y <span class="metal">CLAUDE.md</span>.</li>
+          <li>Soporta <strong>OpenRouter, Fireworks, Baseten, OpenAI y Anthropic</strong>.</li>
+          <li>GitHub Action lista para <strong>PR diario automatizado</strong>.</li>
+          <li>Tracing opcional con <span class="metal">LangSmith</span>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stack-row">
+      <div class="stack-label">Stack</div>
+      <div class="stack-tags">
+        <span class="tag">Node.js</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">LangChain toolkit</span>
+        <span class="tag">GitHub Actions</span>
+      </div>
+    </div>
+
+    <div class="card-cta">
+      <div class="repo-url">github.com<span class="slash">/</span>langchain-ai<span class="slash">/</span>openwiki</div>
+      <a class="btn-github" href="https://github.com/langchain-ai/openwiki" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.68 1.25 3.34.96.1-.74.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18.92-.26 1.91-.39 2.89-.39.98 0 1.97.13 2.89.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.4-5.25 5.69.41.36.78 1.06.78 2.14v3.18c0 .31.21.67.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+        Ver repositorio
+      </a>
+    </div>
+  </article>
+
+  <article class="repo-card" id="repo-dograh">
+    <div class="card-head">
+      <div class="card-title-wrap">
+        <div class="card-number">
+          <span class="num">02</span>
+          <span class="category">Voice AI Platform &middot; Self-Hosted</span>
+        </div>
+        <div class="repo-name"><span class="handle">dograh-hq /</span> <span class="name-accent">dograh</span></div>
+        <div class="repo-tagline">Plataforma open source de agentes de voz, alternativa self-hosted a Vapi y Retell con constructor visual de workflows.</div>
+      </div>
+      <div class="card-stats">
+        <span class="stat-pill"><span class="dot"></span>4.2k &#9733; &middot; 856 forks</span>
+        <span class="stat-pill"><span class="dot silver"></span>BSD 2-Clause</span>
+      </div>
+    </div>
+
+    <div class="one-liner">
+      <div class="label">En una frase</div>
+      <div class="text">Un docker-compose y en dos minutos tienes un agente de voz de producción con constructor visual, sin necesidad de API keys para arrancar.</div>
+    </div>
+
+    <div class="two-col">
+      <div class="col-block">
+        <div class="col-label">Funcionalidades</div>
+        <ul>
+          <li>Constructor <strong>drag-and-drop</strong> de workflows de conversación.</li>
+          <li>Modelo <span class="metal">Speech-to-Speech</span> o pipeline LLM+STT+TTS por separado.</li>
+          <li>Telefonía integrada: <strong>Twilio, Vonage, Vobiz, Cloudonix</strong>.</li>
+          <li>Transferencia de llamadas a <span class="metal">agentes humanos</span>.</li>
+        </ul>
+      </div>
+      <div class="col-block">
+        <div class="col-label">Características</div>
+        <ul>
+          <li><strong>BYOK</strong>: cualquier proveedor de LLM, TTS y STT.</li>
+          <li><strong>MCP nativo</strong> integrado desde el diseño.</li>
+          <li>API keys auto-generadas: <span class="metal">arranca sin configurar nada</span>.</li>
+          <li>Test mode + Web Calls in-dashboard, <span class="metal">nodo QA</span> en el workflow.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stack-row">
+      <div class="stack-label">Stack</div>
+      <div class="stack-tags">
+        <span class="tag">Python</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">Pipecat</span>
+        <span class="tag">Docker Compose</span>
+      </div>
+    </div>
+
+    <div class="card-cta">
+      <div class="repo-url">github.com<span class="slash">/</span>dograh-hq<span class="slash">/</span>dograh</div>
+      <a class="btn-github" href="https://github.com/dograh-hq/dograh" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.68 1.25 3.34.96.1-.74.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18.92-.26 1.91-.39 2.89-.39.98 0 1.97.13 2.89.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.4-5.25 5.69.41.36.78 1.06.78 2.14v3.18c0 .31.21.67.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+        Ver repositorio
+      </a>
+    </div>
+  </article>
+
+  <article class="repo-card" id="repo-linkwarden">
+    <div class="card-head">
+      <div class="card-title-wrap">
+        <div class="card-number">
+          <span class="num">03</span>
+          <span class="category">Bookmark Manager &middot; Self-Hosted</span>
+        </div>
+        <div class="repo-name"><span class="handle">linkwarden /</span> <span class="name-accent">linkwarden</span></div>
+        <div class="repo-tagline">Gestor de bookmarks colaborativo self-hosted que preserva las páginas guardadas por si desaparecen de la red.</div>
+      </div>
+      <div class="card-stats">
+        <span class="stat-pill"><span class="dot"></span>18.3k &#9733; &middot; 756 forks</span>
+        <span class="stat-pill"><span class="dot silver"></span>AGPL-3.0</span>
+      </div>
+    </div>
+
+    <div class="one-liner">
+      <div class="label">En una frase</div>
+      <div class="text">Guarda cada enlace con screenshot, PDF y HTML, deja anotarlo en vista lector y sigue funcionando aunque la web original desaparezca.</div>
+    </div>
+
+    <div class="two-col">
+      <div class="col-block">
+        <div class="col-label">Funcionalidades</div>
+        <ul>
+          <li>Auto-captura <strong>screenshot + PDF + HTML</strong> de cada página.</li>
+          <li>Vista lector con <strong>highlights y anotaciones</strong>.</li>
+          <li>Envío opcional a <span class="metal">Wayback Machine</span>.</li>
+          <li><strong>Local AI Tagging</strong> opcional para etiquetas automáticas.</li>
+        </ul>
+      </div>
+      <div class="col-block">
+        <div class="col-label">Características</div>
+        <ul>
+          <li>Colaboración multiusuario con <strong>permisos por colección</strong>.</li>
+          <li>Apps nativas <strong>iOS y Android</strong>, extensión de navegador.</li>
+          <li>Sincronización con <span class="metal">Floccus</span>, SSO en self-hosted.</li>
+          <li>i18n con <strong>20+ idiomas</strong>, full-text search y RSS.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stack-row">
+      <div class="stack-label">Stack</div>
+      <div class="stack-tags">
+        <span class="tag">Next.js &middot; TypeScript</span>
+        <span class="tag">React Native</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">Docker</span>
+      </div>
+    </div>
+
+    <div class="card-cta">
+      <div class="repo-url">github.com<span class="slash">/</span>linkwarden<span class="slash">/</span>linkwarden</div>
+      <a class="btn-github" href="https://github.com/linkwarden/linkwarden" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.68 1.25 3.34.96.1-.74.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18.92-.26 1.91-.39 2.89-.39.98 0 1.97.13 2.89.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.4-5.25 5.69.41.36.78 1.06.78 2.14v3.18c0 .31.21.67.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+        Ver repositorio
+      </a>
+    </div>
+  </article>
+
+  <article class="repo-card" id="repo-trek">
+    <div class="card-head">
+      <div class="card-title-wrap">
+        <div class="card-number">
+          <span class="num">04</span>
+          <span class="category">Travel Planner &middot; Self-Hosted</span>
+        </div>
+        <div class="repo-name"><span class="handle">mauriceboe /</span> <span class="name-accent">TREK</span></div>
+        <div class="repo-tagline">Planificador de viajes self-hosted colaborativo en tiempo real con mapas, presupuestos, diario y servidor MCP integrado.</div>
+      </div>
+      <div class="card-stats">
+        <span class="stat-pill"><span class="dot"></span>8.8k &#9733; &middot; 724 forks</span>
+        <span class="stat-pill"><span class="dot silver"></span>AGPL-3.0</span>
+      </div>
+    </div>
+
+    <div class="one-liner">
+      <div class="label">En una frase</div>
+      <div class="text">Un docker-compose y tienes tu propio TripIt: planificación colaborativa, mapas 3D, split de gastos, diario magazine y expuesto a agentes IA vía MCP.</div>
+    </div>
+
+    <div class="two-col">
+      <div class="col-block">
+        <div class="col-label">Funcionalidades</div>
+        <ul>
+          <li>Planificador <strong>drag-and-drop</strong> por días con mapas 3D.</li>
+          <li>Búsqueda de lugares vía <span class="metal">Google Places u OpenStreetMap</span>.</li>
+          <li>Split de gastos estilo <strong>Splitwise</strong>, multi-moneda.</li>
+          <li>Import de reservas desde <span class="metal">emails y PDFs</span> con KDE Itinerary.</li>
+        </ul>
+      </div>
+      <div class="col-block">
+        <div class="col-label">Características</div>
+        <ul>
+          <li>Colaboración real-time por <strong>WebSocket</strong>.</li>
+          <li>Servidor <span class="metal">MCP integrado</span>: 150+ tools, 30 recursos, 27 scopes.</li>
+          <li>Auth completa: <strong>SSO OIDC + 2FA + Passkeys</strong> (WebAuthn).</li>
+          <li>PWA con <strong>offline</strong> y 20 idiomas (incluye RTL).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stack-row">
+      <div class="stack-label">Stack</div>
+      <div class="stack-tags">
+        <span class="tag">Node 22 &middot; NestJS 11</span>
+        <span class="tag">React 19 &middot; Vite</span>
+        <span class="tag">SQLite &middot; WebSocket</span>
+        <span class="tag">Docker &middot; Helm</span>
+      </div>
+    </div>
+
+    <div class="card-cta">
+      <div class="repo-url">github.com<span class="slash">/</span>mauriceboe<span class="slash">/</span>TREK</div>
+      <a class="btn-github" href="https://github.com/mauriceboe/TREK" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.68 1.25 3.34.96.1-.74.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18.92-.26 1.91-.39 2.89-.39.98 0 1.97.13 2.89.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.4-5.25 5.69.41.36.78 1.06.78 2.14v3.18c0 .31.21.67.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+        Ver repositorio
+      </a>
+    </div>
+  </article>
+
+  <article class="repo-card" id="repo-codebase-memory-mcp">
+    <div class="card-head">
+      <div class="card-title-wrap">
+        <div class="card-number">
+          <span class="num">05</span>
+          <span class="category">Code Intelligence MCP</span>
+        </div>
+        <div class="repo-name"><span class="handle">DeusData /</span> <span class="name-accent">codebase-memory-mcp</span></div>
+        <div class="repo-tagline">Servidor MCP que indexa tu codebase en un grafo de conocimiento persistente para que los agentes IA lo consulten sin gastar tokens.</div>
+      </div>
+      <div class="card-stats">
+        <span class="stat-pill"><span class="dot"></span>25.6k &#9733; &middot; 1.9k forks</span>
+        <span class="stat-pill"><span class="dot silver"></span>MIT License</span>
+      </div>
+    </div>
+
+    <div class="one-liner">
+      <div class="label">En una frase</div>
+      <div class="text">Indexa un repo entero en milisegundos y responde consultas estructurales en menos de 1 ms, con un 99% menos de tokens que buscar archivo por archivo.</div>
+    </div>
+
+    <div class="two-col">
+      <div class="col-block">
+        <div class="col-label">Funcionalidades</div>
+        <ul>
+          <li>Grafo con <strong>158 lenguajes</strong> vía tree-sitter vendorizado.</li>
+          <li><strong>Hybrid LSP</strong>: resolución semántica en 11 lenguajes.</li>
+          <li><strong>14 herramientas MCP</strong>: search_graph, trace_path, get_architecture, detect_changes.</li>
+          <li>Consultas <span class="metal">Cypher</span> de sólo lectura sobre el grafo.</li>
+        </ul>
+      </div>
+      <div class="col-block">
+        <div class="col-label">Características</div>
+        <ul>
+          <li>Binario único estático, <strong>cero dependencias</strong> externas.</li>
+          <li>Auto-configura <strong>11 agentes</strong>: Claude Code, Codex, Gemini CLI, Zed, VS Code...</li>
+          <li>Semantic search con embeddings <span class="metal">Nomic vendorizados</span>.</li>
+          <li>Publicado con <strong>SLSA 3 + Sigstore + VirusTotal 0/72</strong>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stack-row">
+      <div class="stack-label">Stack</div>
+      <div class="stack-tags">
+        <span class="tag">C puro (88%)</span>
+        <span class="tag">tree-sitter &middot; SQLite</span>
+        <span class="tag">Cypher &middot; MCP</span>
+        <span class="tag">macOS &middot; Linux &middot; Windows</span>
+      </div>
+    </div>
+
+    <div class="card-cta">
+      <div class="repo-url">github.com<span class="slash">/</span>DeusData<span class="slash">/</span>codebase-memory-mcp</div>
+      <a class="btn-github" href="https://github.com/DeusData/codebase-memory-mcp" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.68 1.25 3.34.96.1-.74.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18.92-.26 1.91-.39 2.89-.39.98 0 1.97.13 2.89.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.4-5.25 5.69.41.36.78 1.06.78 2.14v3.18c0 .31.21.67.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+        Ver repositorio
+      </a>
+    </div>
+  </article>
+
+  <article class="repo-card" id="repo-how-to-secure-a-linux-server">
+    <div class="card-head">
+      <div class="card-title-wrap">
+        <div class="card-number">
+          <span class="num">06</span>
+          <span class="category">Linux Hardening Guide</span>
+        </div>
+        <div class="repo-name"><span class="handle">imthenachoman /</span> <span class="name-accent">How-To-Secure-A-Linux-Server</span></div>
+        <div class="repo-tagline">Guía viva en Markdown para asegurar un servidor Linux desde cero, orientada a autoalojamiento pero aplicable a producción.</div>
+      </div>
+      <div class="card-stats">
+        <span class="stat-pill"><span class="dot"></span>27.8k &#9733; &middot; 1.8k forks</span>
+        <span class="stat-pill"><span class="dot silver"></span>CC-BY-SA-4.0</span>
+      </div>
+    </div>
+
+    <div class="one-liner">
+      <div class="label">En una frase</div>
+      <div class="text">Un único README enorme (166 KB) que te lleva paso a paso por SSH, firewall, fail2ban, 2FA y kernel hardening explicándote además el porqué de cada configuración.</div>
+    </div>
+
+    <div class="two-col">
+      <div class="col-block">
+        <div class="col-label">Funcionalidades</div>
+        <ul>
+          <li><strong>SSH hardening</strong>: claves ed25519, política de accesos, opciones estrictas.</li>
+          <li>Firewall con <span class="metal">UFW</span>: puertos, reglas y por defecto denegar.</li>
+          <li><strong>Fail2ban</strong>: bloqueo automático de IPs sospechosas por logs.</li>
+          <li><strong>2FA/MFA</strong> vía PAM con app autenticador.</li>
+          <li>Hardening del <span class="metal">kernel</span> por sysctl y de <span class="metal">nginx</span>.</li>
+        </ul>
+      </div>
+      <div class="col-block">
+        <div class="col-label">Características</div>
+        <ul>
+          <li>Markdown puro: <strong>sin scripts, sin dependencias</strong>.</li>
+          <li>Explica el <span class="metal">porqué</span> de cada paso, no solo el cómo.</li>
+          <li>Enfoque <strong>at-home</strong>, aplicable a entornos profesionales.</li>
+          <li>Guía viva desde 2019: <strong>~270 commits</strong> de evolución.</li>
+          <li>Incluye <span class="metal">PSAD</span> y <span class="metal">CrowdSec</span> como opciones avanzadas.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stack-row">
+      <div class="stack-label">Stack</div>
+      <div class="stack-tags">
+        <span class="tag">Markdown puro</span>
+        <span class="tag">Ubuntu &middot; Debian</span>
+        <span class="tag">UFW &middot; Fail2ban &middot; CrowdSec</span>
+        <span class="tag">SSH &middot; PAM &middot; sysctl</span>
+      </div>
+    </div>
+
+    <div class="card-cta">
+      <div class="repo-url">github.com<span class="slash">/</span>imthenachoman<span class="slash">/</span>How-To-Secure-A-Linux-Server</div>
+      <a class="btn-github" href="https://github.com/imthenachoman/How-To-Secure-A-Linux-Server" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.36-3.87-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.76 2.68 1.25 3.34.96.1-.74.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.18 1.18.92-.26 1.91-.39 2.89-.39.98 0 1.97.13 2.89.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.24 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.4-5.25 5.69.41.36.78 1.06.78 2.14v3.18c0 .31.21.67.8.56C20.21 21.39 23.5 17.08 23.5 12 23.5 5.65 18.35.5 12 .5z"/></svg>
+        Ver repositorio
+      </a>
+    </div>
+  </article>
+</div>
+
+<footer class="bottom">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="data:image/jpeg;base64,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" alt="AI Workflow Solutions" class="brand-logo-footer">
+      <div class="ft-text">AI Workflow Solutions</div>
+    </div>
+    <div class="footer-contact">
+      <a href="mailto:carlos@aiworkflow.es">carlos@aiworkflow.es</a>
+      <a href="https://linkedin.com/in/carlos-aiws" target="_blank" rel="noopener noreferrer">linkedin.com/in/carlos-aiws</a>
+    </div>
+    <div class="footer-meta">
+      <div>Carlos León</div>
+      <div class="role">Founder &middot; AI Engineer</div>
+    </div>
+  </div>
+  <div class="footer-bottom-line">
+    <div>&copy; 2026 AI Workflow Solutions &middot; Key Consulting</div>
+    <div><span class="red-tag">&middot;</span> Document classification: Internal Research</div>
+  </div>
+</footer>
+
+</div>
+<script>
+/* HERMES-SOLO-JS */
+(function(){
+  var body=document.body,
+      info=document.getElementById('sb-info'),
+      btn=document.getElementById('sb-showall'),
+      total=document.querySelectorAll('.repo-card').length;
+  function apply(){
+    var id=decodeURIComponent((location.hash||'').slice(1));
+    var el=id?document.getElementById(id):null;
+    if(el && el.classList.contains('repo-card')){
+      body.classList.add('solo-repo');
+      if(info) info.textContent='Mostrando 1 repo de '+total+' de esta sesi\u00f3n';
+      window.scrollTo(0,0);
+    } else {
+      body.classList.remove('solo-repo');
+    }
+  }
+  if(btn) btn.addEventListener('click', function(){
+    body.classList.remove('solo-repo');
+    var t=document.querySelector('.repo-card:target');
+    if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+  window.addEventListener('hashchange', apply);
+  apply();
+})();
+</script>
+</body>
+</html>
