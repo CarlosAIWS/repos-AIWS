@@ -1,5 +1,131 @@
 [
   {
+    "fecha": "2026-07-20",
+    "repo": "h4ckf0r0day/obscura",
+    "url_repo": "https://github.com/h4ckf0r0day/obscura",
+    "titulo": "Headless Browser · Scraping",
+    "resumen": "Navegador headless open source escrito en Rust, pensado para scraping a escala y para agentes IA.",
+    "tags": [
+      "scraping",
+      "navegador",
+      "agentes",
+      "mcp"
+    ],
+    "html": "semanas/analisis_repos_AIWS-20-07-2026.html#repo-obscura",
+    "tema": "Agentes IA, scraping y utilidades open source",
+    "lenguaje": "Rust",
+    "licencia": "Apache 2.0",
+    "estrellas": 18900
+  },
+  {
+    "fecha": "2026-07-20",
+    "repo": "steipete/CodexBar",
+    "url_repo": "https://github.com/steipete/CodexBar",
+    "titulo": "AI Coding Usage · macOS Menu Bar",
+    "resumen": "App diminuta para la barra de menú de macOS que muestra el uso y los límites de tus proveedores de coding con IA.",
+    "tags": [
+      "coding",
+      "costes",
+      "observabilidad",
+      "control"
+    ],
+    "html": "semanas/analisis_repos_AIWS-20-07-2026.html#repo-codexbar",
+    "tema": "Agentes IA, scraping y utilidades open source",
+    "lenguaje": "Swift",
+    "licencia": "MIT",
+    "estrellas": 14200
+  },
+  {
+    "fecha": "2026-07-20",
+    "repo": "FoundationAgents/OpenManus",
+    "url_repo": "https://github.com/FoundationAgents/OpenManus",
+    "titulo": "General AI Agent Framework",
+    "resumen": "Framework Python para construir agentes IA generales, alternativa abierta al Manus original sin invite code.",
+    "tags": [
+      "agentes",
+      "mcp",
+      "automatización",
+      "navegador"
+    ],
+    "html": "semanas/analisis_repos_AIWS-20-07-2026.html#repo-openmanus",
+    "tema": "Agentes IA, scraping y utilidades open source",
+    "lenguaje": "Python",
+    "licencia": "MIT",
+    "estrellas": 56400
+  },
+  {
+    "fecha": "2026-07-20",
+    "repo": "ChatbotXIO/ChatbotX",
+    "url_repo": "https://github.com/ChatbotXIO/ChatbotX",
+    "titulo": "Omnichannel Chatbot Platform",
+    "resumen": "Chatbot omnicanal open source para flujos agénticos, alternativa self-hosted a Wati, ManyChat, Chatfuel y Respond.io.",
+    "tags": [
+      "agentes",
+      "integraciones",
+      "mcp",
+      "self-hosted"
+    ],
+    "html": "semanas/analisis_repos_AIWS-20-07-2026.html#repo-chatbotx",
+    "tema": "Agentes IA, scraping y utilidades open source",
+    "lenguaje": "TypeScript",
+    "licencia": "AGPL-3.0",
+    "estrellas": 17
+  },
+  {
+    "fecha": "2026-07-20",
+    "repo": "kasteckis/TempFastMail",
+    "url_repo": "https://github.com/kasteckis/TempFastMail",
+    "titulo": "Disposable Email · Self-Hosted",
+    "resumen": "Bandeja de entrada de correo temporal, self-hosted, para recibir emails desechables sobre tu propio dominio.",
+    "tags": [
+      "email",
+      "self-hosted",
+      "seguridad",
+      "apis"
+    ],
+    "html": "semanas/analisis_repos_AIWS-20-07-2026.html#repo-tempfastmail",
+    "tema": "Agentes IA, scraping y utilidades open source",
+    "lenguaje": "PHP",
+    "licencia": "GPL",
+    "estrellas": 328
+  },
+  {
+    "fecha": "2026-07-20",
+    "repo": "DriveLite/DriveLite",
+    "url_repo": "https://github.com/DriveLite/DriveLite",
+    "titulo": "E2E Encrypted File Storage",
+    "resumen": "Backend modular y self-hostable de almacenamiento de ficheros con cifrado end-to-end, presentado como \"el Supabase de File Storage\".",
+    "tags": [
+      "documentos",
+      "self-hosted",
+      "seguridad",
+      "almacenamiento"
+    ],
+    "html": "semanas/analisis_repos_AIWS-20-07-2026.html#repo-drivelite",
+    "tema": "Agentes IA, scraping y utilidades open source",
+    "lenguaje": "TypeScript",
+    "licencia": "AGPL-3.0",
+    "estrellas": 110
+  },
+  {
+    "fecha": "2026-07-20",
+    "repo": "claffin/cloudproxy",
+    "url_repo": "https://github.com/claffin/cloudproxy",
+    "titulo": "Cloud Proxy Provisioning",
+    "resumen": "Provisiona proxies HTTP en varios cloud providers para esconder la IP de tus scrapers, controlado por API.",
+    "tags": [
+      "scraping",
+      "proxy",
+      "apis",
+      "automatización"
+    ],
+    "html": "semanas/analisis_repos_AIWS-20-07-2026.html#repo-cloudproxy",
+    "tema": "Agentes IA, scraping y utilidades open source",
+    "lenguaje": "Python",
+    "licencia": "MIT",
+    "estrellas": 1700
+  },
+  {
     "fecha": "2026-07-08",
     "repo": "langchain-ai/openwiki",
     "url_repo": "https://github.com/langchain-ai/openwiki",
