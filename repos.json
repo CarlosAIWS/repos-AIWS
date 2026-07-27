@@ -1,5 +1,59 @@
 [
   {
+    "fecha": "2026-07-27",
+    "repo": "diegosouzapw/OmniRoute",
+    "url_repo": "https://github.com/diegosouzapw/OmniRoute",
+    "titulo": "AI Gateway · Local-First",
+    "resumen": "Gateway de IA que unifica cientos de proveedores tras un único endpoint local, con fallback automático y compresión de tokens.",
+    "tags": [
+      "apis",
+      "automatización",
+      "local-first",
+      "mcp"
+    ],
+    "html": "semanas/analisis_repos_AIWS-27-07-2026.html#repo-omniroute",
+    "tema": "Gateway de modelos, despliegue y research",
+    "lenguaje": "TypeScript",
+    "licencia": "MIT",
+    "estrellas": 26600
+  },
+  {
+    "fecha": "2026-07-27",
+    "repo": "oblien/openship",
+    "url_repo": "https://github.com/oblien/openship",
+    "titulo": "Deployment Platform · Self-Hosted",
+    "resumen": "Plataforma de despliegue open source con CI/CD integrado, alternativa self-hosted que construye en local y envía contenedores al servidor.",
+    "tags": [
+      "self-hosted",
+      "despliegue",
+      "automatización",
+      "control"
+    ],
+    "html": "semanas/analisis_repos_AIWS-27-07-2026.html#repo-openship",
+    "tema": "Gateway de modelos, despliegue y research",
+    "lenguaje": "TypeScript",
+    "licencia": "AGPL-3.0",
+    "estrellas": 28
+  },
+  {
+    "fecha": "2026-07-27",
+    "repo": "mvanhorn/last30days-skill",
+    "url_repo": "https://github.com/mvanhorn/last30days-skill",
+    "titulo": "Research Skill · Multi-Source",
+    "resumen": "Skill de agente IA que investiga cualquier tema en Reddit, X, YouTube, HN, Polymarket y más, y sintetiza un informe fundamentado.",
+    "tags": [
+      "skills",
+      "investigación",
+      "redes sociales",
+      "scraping"
+    ],
+    "html": "semanas/analisis_repos_AIWS-27-07-2026.html#repo-last30days-skill",
+    "tema": "Gateway de modelos, despliegue y research",
+    "lenguaje": "Python",
+    "licencia": "MIT",
+    "estrellas": 52000
+  },
+  {
     "fecha": "2026-07-20",
     "repo": "h4ckf0r0day/obscura",
     "url_repo": "https://github.com/h4ckf0r0day/obscura",
