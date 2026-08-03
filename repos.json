@@ -1,5 +1,59 @@
 [
   {
+    "fecha": "2026-08-03",
+    "repo": "citrolabs/ego-lite",
+    "url_repo": "https://github.com/citrolabs/ego-lite",
+    "titulo": "Agent Browser · macOS",
+    "resumen": "Navegador pensado para que tú y tus agentes IA trabajéis en paralelo dentro de la misma aplicación, sin pelearos por las pestañas.",
+    "tags": [
+      "navegador",
+      "agentes",
+      "local-first",
+      "automatización"
+    ],
+    "html": "semanas/analisis_repos_AIWS-03-08-2026.html#repo-ego-lite",
+    "tema": "Navegador compartido, PDFs y estilo de salida",
+    "lenguaje": "JavaScript",
+    "licencia": "MIT",
+    "estrellas": 47
+  },
+  {
+    "fecha": "2026-08-03",
+    "repo": "firecrawl/pdf-inspector",
+    "url_repo": "https://github.com/firecrawl/pdf-inspector",
+    "titulo": "PDF Classification · Extraction",
+    "resumen": "Librería en Rust que detecta si un PDF lleva texto real o está escaneado, extrae el contenido y lo convierte a Markdown limpio, sin OCR.",
+    "tags": [
+      "documentos",
+      "pdf",
+      "extracción",
+      "automatización"
+    ],
+    "html": "semanas/analisis_repos_AIWS-03-08-2026.html#repo-pdf-inspector",
+    "tema": "Navegador compartido, PDFs y estilo de salida",
+    "lenguaje": "Rust",
+    "licencia": "MIT",
+    "estrellas": 1400
+  },
+  {
+    "fecha": "2026-08-03",
+    "repo": "ayghri/i-have-adhd",
+    "url_repo": "https://github.com/ayghri/i-have-adhd",
+    "titulo": "Output Style Skill",
+    "resumen": "Skill que reescribe cómo responde tu agente de código: acción primero, pasos numerados y sin relleno.",
+    "tags": [
+      "skills",
+      "coding",
+      "workflow",
+      "escritura"
+    ],
+    "html": "semanas/analisis_repos_AIWS-03-08-2026.html#repo-i-have-adhd",
+    "tema": "Navegador compartido, PDFs y estilo de salida",
+    "lenguaje": "Markdown",
+    "licencia": "MIT",
+    "estrellas": 15900
+  },
+  {
     "fecha": "2026-07-27",
     "repo": "diegosouzapw/OmniRoute",
     "url_repo": "https://github.com/diegosouzapw/OmniRoute",
